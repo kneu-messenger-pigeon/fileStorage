@@ -1,4 +1,4 @@
-package storage
+package fileStorage
 
 import (
 	"errors"
@@ -34,7 +34,7 @@ func (storage Storage) Get() (string, error) {
 	return storage.value, nil
 }
 
-func (storage *Storage) Set(value string) error {
+func (storage Storage) Set(value string) error {
 	if storage.loaded && storage.value == value {
 		return nil
 	}
